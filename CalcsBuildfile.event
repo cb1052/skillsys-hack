@@ -1,0 +1,10 @@
+#ifdef _FE8_
+    #include "EAstdlib.event"
+#endif
+PUSH
+
+ORG $2ABC8
+SHORT 0x0040 //luck*2 for hit
+ORG $2ABEE
+SHORT 0x2119 0x5651 0x1840 0x0040 0x1C11 0x3157 0x7809 0x0609 0x1609 //luck*2 for avoid
+POP
