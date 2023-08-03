@@ -10,8 +10,8 @@
 .equ Get_Def_Growth, Class_Level_Cap_Table+24
 .equ Get_Res_Growth, Class_Level_Cap_Table+28
 .equ Get_Luk_Growth, Class_Level_Cap_Table+32
-.equ Growth_Options, Class_Level_Cap_Table+36
-.equ Get_Con_Growth, Class_Level_Cap_Table+40
+.equ Growth_Options, Class_Level_Cap_Table+40
+.equ Get_Con_Growth, Class_Level_Cap_Table+36
 
 @jumped here from 2BA28
 @r0=battle struct of person who's levelling up
