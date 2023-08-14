@@ -82,12 +82,6 @@
 	WORD USE_CHAR_AND_CLASS_GROWTHS
 
   ALIGN 4
-  Get_Con_Growth:
-    #incbin "asm/Get_Con_Growth.dmp"
-    POIN Extra_Growth_Boosts|1
-	WORD USE_CHAR_AND_CLASS_GROWTHS
-
-  ALIGN 4
   Get_Luk_Growth:
     #incbin "asm/Get_Luk_Growth.dmp"
     POIN Extra_Growth_Boosts|1
@@ -108,7 +102,7 @@
 	#else
 		WORD 0 // Code in this function treats 0 here as strmag not installed and does nothing.
 	#endif // USE_STRMAG_SPLIT
-	POIN Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth Get_Con_Growth
+	POIN Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
     WORD Growth_Options
 
   ALIGN 4
