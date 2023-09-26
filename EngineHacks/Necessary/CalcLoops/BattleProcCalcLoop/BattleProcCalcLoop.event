@@ -18,11 +18,8 @@ POIN Proc_Devil	//devil effect
 
 POIN Proc_Moonbow 
 
-#ifndef COMBAT_ARTS
-	POIN Proc_Adept Proc_DragonFang 
-#else // COMBAT_ARTS
-	POIN CombatArt_Adept CombatArt_DragonFang
-#endif // COMBAT_ARTS
+POIN Proc_Adept Proc_DragonFang 
+
 
 POIN Proc_Eclipse	//skills that do damage and all that
 

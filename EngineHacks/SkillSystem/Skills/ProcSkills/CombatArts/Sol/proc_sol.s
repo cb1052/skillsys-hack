@@ -69,6 +69,9 @@ mov	lr,r3
 .short	0xF800
 mov	  r1, #4
 ldsh	r1, [r7, r1]    @ damage
+mov   r2, r1
+asr   r2, #0x1
+add   r1, r1, r2      @damage multiplied by 1.5
 ldrb  r2, [r5, #0x13] @ defender's curr hp
 cmp   r1, r2
 ble   defLives        @ Damage taken / HP healed by attacker

@@ -951,7 +951,8 @@
 // By Vesly 
 #define BidingBlowID 255
 
-
+#define DoubleShotID 255
+#define AccostID 255
 
 //Stat Modifier Skills
 

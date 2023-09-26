@@ -41,7 +41,9 @@ beq End
 @if user has Adept, check for proc rate
 mov r0, #0x5E
 ldrh r0, [r4, r0] @AS as activation rate
-lsl r0, #0x1
+mov r1, #0x15
+ldrh r1, [r4, r1] @as well as skl
+add r0, r1, r0
 mov r1, r4 @skill user
 blh d100Result
 cmp r0, #1

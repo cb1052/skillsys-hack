@@ -32,12 +32,12 @@ b False
 
 UnitHasSkill:
 @check if active unit has enough durability with any weapon in their inventory
-ldr r0,ArtID
-ldr r1,CombatArtCostTable
-add r0,r1
-ldrb r5,[r0] @r5 = needed durability
-mov r6,r4
-add r6,#0x1E @r6 = start of items on active unit
+@ldr r0,ArtID
+@ldr r1,CombatArtCostTable
+@add r0,r1
+@ldrb r5,[r0] @r5 = needed durability
+@mov r6,r4
+@add r6,#0x1E @r6 = start of items on active unit
 
 LoopStart:
 ldrh r1,[r6]

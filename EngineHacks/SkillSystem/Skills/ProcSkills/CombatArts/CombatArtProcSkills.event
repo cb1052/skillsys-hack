@@ -1,9 +1,9 @@
 
-ALIGN 4
-CombatArt_Adept:
-#incbin "Adept/proc_adept.dmp"
-POIN SkillTester
-WORD AdeptID
+//ALIGN 4
+//CombatArt_Adept:
+//#incbin "Adept/proc_adept.dmp"
+//POIN SkillTester
+//WORD AdeptID
 
 ALIGN 4
 CombatArt_AetherDamage:
@@ -54,4 +54,8 @@ CombatArt_SureShot:
 POIN SkillTester
 WORD SureShotID
 
-
+//ALIGN 4
+//CombatArt_DoubleShot:
+//#incbin "DoubleShot/proc_doubleshot.dmp"
+//POIN SkillTester
+//WORD DoubleShotID

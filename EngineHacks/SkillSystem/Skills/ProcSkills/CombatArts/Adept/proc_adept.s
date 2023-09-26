@@ -4,7 +4,7 @@
   mov lr, \reg
   .short 0xf800
 .endm
-.equ AdeptID, SkillTester+4
+.equ DoubleShotID, SkillTester+4
 .equ d100Result, 0x802a52c
 .equ recurse_round, 0x802b83c
 
@@ -54,17 +54,35 @@ cmp r0,r4
 bne End
 
 @if we proc, set the brave effect flag for the NEXT hit
-ldrb r1, AdeptID @first mark Adept active
+ldrb r1, DoubleShotID @first mark Adept active
 strb r1, [r6,#4]
 
 add     r6, #8 @double width battle buffer   
 mov     r0, #0x40
 lsl     r0, #8  
 str     r0,[r6]                @ 0802B43A 6018  
-ldrb r0, AdeptID
+ldrb r0, DoubleShotID
 strb r0, [r6,#4] @save the skill ID at byte #4
 
+@save the AS as AS - 4
+mov     r0, #0x5E
+ldrb    r0, [r4, r0]
+mov     r1, #0x4
+cmp     r0, r1 @compares if r0 is less than or equal to 4
+bge     LessOrEqual
+sub     r0, r0, r1
+strb    r0, [r4, r0]
+b AfterASCheck
+
+LessOrEqual:
+mov     r1, #0x0
+mov     r0, #0x5E
+strb    r1, [r4, r0] @save the AS as 0
+b AfterASCheck
+
+
 @now add the number of rounds - 
+AfterASCheck:
 mov r1, #0x38
 mov r2, sp
 ldr r0, [r2,r1] @location of number of rounds on the stack... hopefully
@@ -79,4 +97,4 @@ pop {r15}
 .ltorg
 SkillTester:
 @POIN SkillTester
-@WORD AdeptID
+@WORD DoubleShotID

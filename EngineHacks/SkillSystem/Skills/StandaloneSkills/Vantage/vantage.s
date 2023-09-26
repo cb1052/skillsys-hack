@@ -61,15 +61,15 @@ VantagePlus:
 eor r4,r5
 eor r5,r4
 eor r4,r5
-mov r1, #0x66 @crit
-mov r8, r8
-strh r0, [r4,r1]
+@mov r1, #0x66 @crit
+@mov r8, r8
+@strh r0, [r4,r1]
 @mov r1, #0x68 @crit avoid
 @mov r0, #0
 @strh r0, [r4,r1]
-mov r1, #0x6A @battle crit
-mov r8, r8
-strh r0, [r4,r1]
+@mov r1, #0x6A @battle crit
+@mov r8, r8
+@strh r0, [r4,r1]
 
 Normal:
 str r4, [r6]

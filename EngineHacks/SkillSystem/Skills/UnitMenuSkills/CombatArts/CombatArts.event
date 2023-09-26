@@ -8,13 +8,13 @@
 
 #include "CombatArts.lyn.event"
 #include "CombatArtsDurabilityCost.lyn.event"
-#include "CombatArtsRestrictDoubling.lyn.event"
+//#include "CombatArtsRestrictDoubling.lyn.event"
 
-ALIGN 4
-CombatArtDoubleOptionLink:
-BYTE ARTS_HIT_ONCE
+//ALIGN 4
+//CombatArtDoubleOptionLink:
+//BYTE ARTS_HIT_ONCE
 
-#define SetCombatArtCost(attackTypeID,durabilityCost) "PUSH; ORG (CombatArtCostTable+attackTypeID); BYTE durabilityCost; POP"
+//#define SetCombatArtCost(attackTypeID,durabilityCost) "PUSH; ORG (CombatArtCostTable+attackTypeID); BYTE durabilityCost; POP"
 
 ALIGN 4
 CombatArtCostTable:
@@ -35,27 +35,29 @@ POIN 0x22861 //On B Press
 POIN 0x4f521 //On R Press
 POIN 0x4f459 //On Help Box
 
-SetCombatArtCost(00,0) //Attack
-SetCombatArtCost(01,0) //Rescue
-SetCombatArtCost(02,0) //Pair Up
-SetCombatArtCost(03,2) //Lunge
-SetCombatArtCost(04,2) //Mercy
-SetCombatArtCost(05,2) //Gamble
-SetCombatArtCost(06,2) //Adept
-SetCombatArtCost(07,3) //Aether
-SetCombatArtCost(08,0) //Astra
-SetCombatArtCost(09,2) //Dragon Fang
-SetCombatArtCost(10,2) //Glacies
-SetCombatArtCost(11,2) //Ignis
-SetCombatArtCost(12,2) //Luna
-SetCombatArtCost(13,2) //Sol
-SetCombatArtCost(14,3) //Sure Shot
+//SetCombatArtCost(00,0) //Attack
+//SetCombatArtCost(01,0) //Rescue
+//SetCombatArtCost(02,0) //Pair Up
+//SetCombatArtCost(03,2) //Lunge
+//SetCombatArtCost(04,2) //Mercy
+//SetCombatArtCost(05,2) //Gamble
+//SetCombatArtCost(06,2) //Adept
+//SetCombatArtCost(07,0) //Aether
+//SetCombatArtCost(08,0) //Astra
+//SetCombatArtCost(09,0) //Dragon Fang
+//SetCombatArtCost(10,0) //Glacies
+//SetCombatArtCost(11,0) //Ignis
+//SetCombatArtCost(12,0) //Luna
+//SetCombatArtCost(13,0) //Sol
+//SetCombatArtCost(14,0) //Sure Shot
+//SetCombatArtCost(15,0) //Double Shot
+//SetCombatArtCost(16,0) //Accost
 
 ALIGN 4
 CombatArtsMenu:
 
 
-MenuCommand(UM_Adept, UM_AdeptDesc, NormalText, AdeptUsability, AdeptEffect, $22c31, $22c99)
+//MenuCommand(UM_Adept, UM_AdeptDesc, NormalText, AdeptUsability, AdeptEffect, $22c31, $22c99)
 
 MenuCommand(UM_Aether, UM_AetherDesc, NormalText, AetherUsability, AetherEffect, $22c31, $22c99)
 
@@ -72,6 +74,10 @@ MenuCommand(UM_Luna, UM_LunaDesc, NormalText, LunaUsability, LunaEffect, $22c31,
 MenuCommand(UM_Sol, UM_SolDesc, NormalText, SolUsability, SolEffect, $22c31, $22c99)
 
 MenuCommand(UM_SureShot, UM_SureShotDesc, NormalText, SureShotUsability, SureShotEffect, $22c31, $22c99)
+
+//MenuCommand(UM_DoubleShot, UM_DoubleShotDesc, NormalText, DoubleShotUsability, DoubleShotEffect, $22c31, $22c99)
+
+//MenuCommand(UM_Accost, UM_AccostDesc, NormalText, AccostUsability, AccostEffect, $22c31, $22c99)
 
 
 
@@ -112,18 +118,18 @@ UM_Separator
 
 
 
-ALIGN 4
-AdeptUsability:
-#incbin "CombatArtUsability.dmp"
-POIN SkillTester
-WORD AdeptID
-WORD 6 //Adept art ID
-POIN CombatArtCostTable
+//ALIGN 4
+//AdeptUsability:
+//#incbin "CombatArtUsability.dmp"
+//POIN SkillTester
+//WORD AdeptID
+//WORD 6 //Adept art ID
+//POIN CombatArtCostTable
 
-ALIGN 4
-AdeptEffect:
-#incbin "CombatArtEffect.dmp"
-WORD 6 //Adept art ID
+//ALIGN 4
+//AdeptEffect:
+//#incbin "CombatArtEffect.dmp"
+//WORD 6 //Adept art ID
 
 ALIGN 4
 AetherUsability:
@@ -230,3 +236,28 @@ SureShotEffect:
 #incbin "CombatArtEffect.dmp"
 WORD 14 //Sure Shot art ID
 
+//ALIGN 4
+//DoubleShotUsability:
+//#incbin "CombatArtUsability.dmp"
+//POIN SkillTester
+//WORD DoubleShotID
+//WORD 15 //Sure Shot art ID
+//POIN CombatArtCostTable
+
+//ALIGN 4
+//DoubleShotEffect:
+//#incbin "CombatArtEffect.dmp"
+//WORD 15 //Sure Shot art ID
+
+//ALIGN 4
+//AccostUsability:
+//#incbin "CombatArtUsability.dmp"
+//POIN SkillTester
+//WORD AccostID
+//WORD 16 //Sure Shot art ID
+//POIN CombatArtCostTable
+
+//ALIGN 4
+//AccostEffect:
+//#incbin "CombatArtEffect.dmp"
+//WORD 16 //Sure Shot art ID
